@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 async function get_weather(lat, lon) {
   try {
     const response = await axios.get(
-      "https://weather.com/en-IN/weather/today/l/" + lat + "," + lon
+      `https://weather.com/en-IN/weather/today/l/${lat},${lon}`
     );
     const html = response.data;
     const $ = cheerio.load(html);
